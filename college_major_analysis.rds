@@ -1,0 +1,14 @@
+devtools::install_github("jhudsl/collegeIncome")
+library(collegeIncome)
+data(college)
+devtools::install_github("jhudsl/matahari")
+library(matahari)
+
+dance_start(value = FALSE, contents = FALSE)
+
+###
+
+summary(lm(median~major_category,college))$coef
+summary(lm(median~major_category+perc_men,college))$coef
+
+dance_save("~/Desktop/college_major_analysis.rds")
